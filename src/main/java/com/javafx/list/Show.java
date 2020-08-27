@@ -1,4 +1,4 @@
-package com.kitsu;
+package com.javafx.list;
 
 import java.awt.Image;
 import java.io.IOException;
@@ -15,6 +15,7 @@ public class Show
 	private String synopsis;
 	private URL url;
 	private OffsetDateTime airdate;
+	private String urlImage;
 	private double score;
 
 	public Show()
@@ -37,16 +38,12 @@ public class Show
 		this.image = ImageIO.read(new URL(image));
 		this.url = new URL(url);
 		this.airdate = OffsetDateTime.parse(airdate);
-		
-		System.out.println(airdate + " string");
-		System.out.println(this.airdate.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
-		
-
+		this.urlImage = image;
 	}
 
-	public Image getImage()
+	public String getImage()
 	{
-		return image;
+		return urlImage;
 	}
 
 	public void setImage(Image image)
@@ -107,10 +104,7 @@ public class Show
 	@Override
 	public String toString()
 	{
-		return "Show [image=" + image + ", title=" + title + ", synopsis=" + synopsis + ", url=" + url + ", airdate="
-				+ airdate + ", score=" + score + "]";
+		return title;
 	}
-	
-	
 
 }

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: Ryan Vreeke
+Build-Jdk: 11.0.6
+Main-Class: com.javafx.list.MainApp
+Created-By: Maven Integration for Eclipse
+

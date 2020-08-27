@@ -1,18 +1,10 @@
-package com.kitsu;
+package com.javafx.list;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-
-import javax.swing.JFrame;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -23,33 +15,10 @@ public class Main
 	private static HttpURLConnection connection;
 	private static ArrayList<Show> shows;
 
-	public static void main(String[] args)
+	public Main()
 	{
-		JFrame f = new JFrame();
 		shows = new ArrayList<Show>();
 		method1(shows);
-		JList<ShowPanel> showComp = new JList<ShowPanel>();
-		JPanel panel = new JPanel();
-		GridLayout grid = new GridLayout(shows.size() / 4, 4);
-
-		panel.setLayout(grid);
-
-		for (Show s : shows)
-		{
-			panel.add(new ShowPanel(s, new Dimension(200, 200)).showPanel());
-		}
-
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		JScrollPane sc = new JScrollPane(panel);
-
-		sc.getVerticalScrollBar().setUnitIncrement(30);
-		sc.setBackground(Color.BLACK);
-		f.setSize(new Dimension(1500, 800));
-		f.add(sc);
-
-		f.setLocationRelativeTo(null);
-		f.setVisible(true);
 
 	}
 
